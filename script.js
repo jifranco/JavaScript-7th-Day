@@ -26,19 +26,14 @@ console.log(everyAdult)
   // Array.prototype.find()
   // Find is like filter, but instead returns just the one you are looking for
   // find the comment with the ID of 823423
-const lookFor = comments.find(function(chat){
-    if(chat.id === 823423){
-        return true
-    }
-});
+const lookFor = comments.find(chat => chat.id === 823423);
 console.log(lookFor)
   // Array.prototype.findIndex()
   // Find the comment with this ID
   // delete the comment with the ID of 823423
 
-const searchAndDestroy = comments.findIndex(function(destroy){
-    if(destroy.id === 823423){
-        destroy.id = 0
-    }
-});
-console.log(searchAndDestroy)
+const searchAndDestroy = comments.findIndex(destroy=>destroy.id === 823423);
+
+comments.splice(searchAndDestroy, 1)
+
+console.table(comments)
